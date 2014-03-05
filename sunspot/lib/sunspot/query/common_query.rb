@@ -53,6 +53,10 @@ module Sunspot
         stats
       end
 
+      def spellcheck options = {}
+        @components << Spellcheck.new(options)
+      end
+
       def paginate(page, per_page, offset = nil)
         if @pagination
           @pagination.offset = offset
